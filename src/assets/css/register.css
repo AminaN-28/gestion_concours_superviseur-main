@@ -1,0 +1,147 @@
+*  {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    transition:  all .2s linear;
+}
+
+.form-container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background: url('ressources/jeuxC.jpeg') no-repeat;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    perspective: 1000px;
+
+}
+
+.form-container form{
+    height: auto;
+    width: auto;
+    margin: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, .1);
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 3);
+    border-top:  1px solid rgba(255, 255, 255, .3);
+    border-left:  1px solid rgba(255, 255, 255, .3);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+}
+
+
+.form-container form h3{
+    font-size: 30px;
+    padding: 30px 0;
+    color: rgb(250, 245, 245);
+    letter-spacing: 3px;
+
+}
+
+.form-container form ::placeholder{
+    color: rgb(255, 255, 255);
+}
+.form-container form i{
+    padding: 0 5px ;
+    font-size: 20px;
+    color: rgb(250, 245, 245);
+
+}
+
+
+.form-container form input{
+    outline: none;
+    border: none;
+    
+    height: 40px;
+    width: 245px;
+    background: rgba(0, 0, 0, .1);
+    color: rgb(250, 245, 245);
+    box-shadow: 0 0 5px rgb(255, 253, 253) inset;
+    font-size: 17px;
+    padding: 0 10px;
+    margin: 15px 0;
+    letter-spacing: 1px;
+}
+
+.form-container form input[type='submit']{
+    width: 90%;
+    cursor: pointer;
+    background: linear-gradient(90deg ,rgb(190, 180, 180), gray);
+    margin-top: 30px;
+    border-radius: 50px;
+}
+
+.form-container form input[type='submit']:hover{
+    letter-spacing: 4px; 
+}
+
+/* body {
+    background: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+} */
+
+
+.logo {
+    position: absolute;
+    right: 2.9%;
+    top: 4%;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+/* .glass{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 700px;
+    background-color: rgba(255,255,255,0.1);
+    padding: 10px;
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    z-index: 100;
+} */
+
+
+
+
+/* .shape-1{
+    position: absolute;
+    left: 250px;
+    bottom: -20px;
+    width: 400px;
+    height: 500px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background: linear-gradient(to right, #d68408, #331c01);
+}
+.shape-2{
+    position: absolute;
+    top: -50px;
+    right: 200px;
+    width: 400px;
+    height: 400px;
+    border-radius:70% 30% 85% 15% / 60% 80% 20% 40%;
+    background: linear-gradient(to right, #363838, #b9adaa);
+} */
+
+
+
+  
+
+
+

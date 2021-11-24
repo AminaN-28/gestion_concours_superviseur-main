@@ -1,0 +1,163 @@
+<!-- Content Row -->
+<div class="row">
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2><b>Thématique</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#addThematiqueModal" class="btn btn-success
+                            mr-1"
+                            data-toggle="modal"><i class="material-icons">&#xE147;</i>
+                            <span>Ajouter</span></a>
+                        <a href="#deleteEmployeeModal" class="btn btn-danger"
+                            data-toggle="modal"><i class="material-icons">&#xE15C;</i>
+                            <span>Supprimer</span></a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll"></label>
+                            </span>
+                        </th>
+                        <th>Nº</th>
+                        <th>Nom</th>
+                        <th>Projets</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let oneThematique of thematiqueList; index
+                        as
+                        index">
+                        <td>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="checkbox1"
+                                    name="options[]" value="1">
+                                <label for="checkbox1"></label>
+                            </span>
+                        </td>
+                        <td>{{index+1}}</td>
+                        <td>{{oneThematique.nom_thematique}}</td>
+                        <td><a href="">Liste des projets</a></td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit mr-1"
+                                data-toggle="modal"><i class="fas fa-edit"
+                                    data-toggle="tooltip" title="Edit"></i></a>
+                            <a href="#deleteEmployeeModal" class="delete"
+                                data-toggle="modal"><i class="fas fa-trash-alt"
+                                    data-toggle="tooltip" title="Delete"></i></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Edit Modal HTML -->
+    <div id="editEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modification de concours</h4>
+                        <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" class="form-control"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label>Edition</label>
+                            <input type="date" class="form-control"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label>Coach</label>
+                            <input type="email" class="form-control"
+                                required>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default"
+                            data-dismiss="modal" value="Annuler">
+                        <input type="submit" class="btn btn-info"
+                            value="Valider">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Modal HTML -->
+    <div id="deleteEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Suppresion de concours...</h4>
+                        <button type="button" class="close"
+                            data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Etes-vous sur de supprimer cette thématique ?</p>
+                        <p class="text-warning"><small>Cette action n'est
+                                pas reversible.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default"
+                            data-dismiss="modal" value="Annuler">
+                        <input type="submit" class="btn btn-danger"
+                            value="Supprimer">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+<!-- Ajouter Modal HTML -->
+<div id="addThematiqueModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h4 class="modal-title">Ajouter administrateur</h4>
+                    <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <label>Nom</label>
+                            <input type="text" class="form-control"
+                                name="object.nom_thematique"
+                                [(ngModel)]="object.nom_thematique"
+                                required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default"
+                        data-dismiss="modal" value="Annuler">
+                    <input type="submit" class="btn btn-success"
+                        (click)="addThematique()"
+                        value="Ajouter">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
