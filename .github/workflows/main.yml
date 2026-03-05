@@ -1,0 +1,21 @@
+name: Security Scan
+on:
+  push:
+    branches: [master]
+
+jobs:
+  dast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build APK
+        run: ./gradlew assembleDebug   # ou ton build
+
+      - name: DAST Security Scan
+        uses: assailai/ares-dast-scan@v1
+        with:
+          api-key: ${{ secrets.ARES_API_KEY }}
+          app-path: app/build/outputs/**/*.apk
+          wait-for-results: true
+          fail-on-critical: true
